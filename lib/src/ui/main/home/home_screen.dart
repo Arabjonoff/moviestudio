@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:moviestudio/src/theme/app_colors.dart';
-import 'package:moviestudio/src/theme/app_style.dart';
-import 'package:moviestudio/src/widget/banner_widget.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:moviestudio/src/utils/file_import.dart';
+import 'package:moviestudio/src/widget/carousel_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,6 +30,8 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         children: [
           BannerWidget(),
+          SizedBox(height: 50.h,),
+          CarouselWidget()
         ],
       ),
     );
