@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_screenutil: ^5.9.0
   carousel_slider: ^4.2.1
+  easy_localization: ^3.0.3
 
 dev_dependencies:
   flutter_test:

@@ -1,0 +1,11 @@
+{
+"home": {
+  "homeBanner": "Hamma joyda",
+  "homeBanner1": "translyatsiya",
+  "language": "Tilni o'zgartirish"
+},
+
+  "category": {
+    "tabBarTitle": "tabBar"
+  }
+}
