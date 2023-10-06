@@ -36,4 +36,9 @@ class ApiProvider {
     return await _getRequest(url);
   }
 
+  Future<HttpResult> topMovie() async{
+    String url = "${_baseUrl}movie/top_rated?language=en-US&page=1";
+    return await _getRequest(url);
+  }
+
 }
