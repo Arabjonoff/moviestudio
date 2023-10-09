@@ -41,7 +41,7 @@ class Result {
   String backdropPath;
   List<int> genreIds;
   int id;
-  OriginalLanguage originalLanguage;
+  OriginalLanguage? originalLanguage;
   String originalTitle;
   String overview;
   double popularity;
@@ -74,7 +74,7 @@ class Result {
     backdropPath: json["backdrop_path"]??"",
     genreIds: List<int>.from(json["genre_ids"].map((x) => x)),
     id: json["id"]>>0,
-    originalLanguage: originalLanguageValues.map[json["original_language"]]!,
+    originalLanguage: originalLanguageValues.map[json["original_language"]],
     originalTitle: json["original_title"]??"",
     overview: json["overview"]??'',
     popularity: json["popularity"]?.toDouble(),

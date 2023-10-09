@@ -1,11 +1,10 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:moviestudio/src/bloc/popular_bloc.dart';
 import 'package:moviestudio/src/bloc/top_movie_bloc.dart';
 import 'package:moviestudio/src/model/popular_movie.dart';
 import 'package:moviestudio/src/model/top_movie_model.dart';
-import 'package:moviestudio/src/provider/repository.dart';
 import 'package:moviestudio/src/ui/drawer/drawer_screen.dart';
+import 'package:moviestudio/src/ui/main/search_screen.dart';
 import 'package:moviestudio/src/utils/file_import.dart';
 import 'package:moviestudio/src/widget/carousel_widget.dart';
 
@@ -26,9 +25,15 @@ tobBloc.getTopMovie();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: DrawerScreen(),
       backgroundColor: AppColors.bg,
       appBar: AppBar(
+        actions: [
+      IconButton(onPressed: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context){
+          return SearchScreen();
+        }));
+      }, icon: Icon(Icons.search))
+        ],
         elevation: 0,
         backgroundColor: AppColors.bg,
         title: RichText(

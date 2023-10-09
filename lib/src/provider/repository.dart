@@ -5,4 +5,5 @@ class Repository{
   final ApiProvider _provider = ApiProvider();
   Future<HttpResult> getPopularMovie() => _provider.popularMovie();
   Future<HttpResult> topMovie() => _provider.topMovie();
+  Future<HttpResult> liveSearch(query) => _provider.liveSearch(query);
 }
