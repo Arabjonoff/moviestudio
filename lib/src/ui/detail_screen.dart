@@ -33,6 +33,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 Text(snapshot.data!.budget.toString()??''),
                 Text(snapshot.data!.overview??''),
                 Text(snapshot.data!.originalTitle??''),
+                Text(snapshot.data!.productionCompanies![0].name??''),
               ],
             );
           }
