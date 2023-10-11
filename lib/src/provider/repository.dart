@@ -6,4 +6,5 @@ class Repository{
   Future<HttpResult> getPopularMovie() => _provider.popularMovie();
   Future<HttpResult> topMovie() => _provider.topMovie();
   Future<HttpResult> liveSearch(query) => _provider.liveSearch(query);
+  Future<HttpResult> movieDetail(id) => _provider.movieDetail(id);
 }
