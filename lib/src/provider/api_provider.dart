@@ -50,5 +50,9 @@ class ApiProvider {
     String url = '${_baseUrl}movie/$id?language=en-US';
     return await _getRequest(url);
   }
+  Future<HttpResult> moviePlayer(id)async{
+    String url = '${_baseUrl}movie/$id/videos?language=en-US';
+    return await _getRequest(url);
+  }
 
 }

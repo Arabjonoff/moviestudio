@@ -40,6 +40,7 @@ dependencies:
   easy_localization: ^3.0.3
   http: ^1.1.0
   rxdart: ^0.27.7
+  youtube_player_flutter: ^8.1.2
 
 dev_dependencies:
   flutter_test:
