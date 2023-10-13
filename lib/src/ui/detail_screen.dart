@@ -28,8 +28,22 @@ class _DetailScreenState extends State<DetailScreen> {
             return Column(
               children: [
                 Image.network("https://image.tmdb.org/t/p/w500/${snapshot.data!.backdropPath}"),
-                Text(snapshot.data!.title??''),
                 Text(snapshot.data!.releaseDate.toString()??''),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    height: 30,
+                    child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: snapshot.data!.genres!.length,
+                        itemBuilder: (context,i){
+                          return Card(
+                              elevation: 10,
+                              color: Colors.grey.shade700,
+                              child: Text(snapshot.data!.genres![i].name??"",style: TextStyle(color: Colors.white),));
+                        }),
+                  ),
+                ),
                 Text(snapshot.data!.budget.toString()??''),
                 Text(snapshot.data!.overview??''),
                 Text(snapshot.data!.originalTitle??''),

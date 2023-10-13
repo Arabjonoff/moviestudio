@@ -29,6 +29,7 @@ class _SearchScreenState extends State<SearchScreen> {
       appBar: AppBar(
         backgroundColor: AppColors.bg,
         title: TextField(
+          autofocus: true,
           decoration: const InputDecoration(
               border: InputBorder.none,
               hintText: 'Serach movie',
@@ -41,8 +42,9 @@ class _SearchScreenState extends State<SearchScreen> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('${controller.text} ga oid ${snapshot.data!.results.length} ta film topildi!' ),
+                  snapshot.data!.results.isEmpty?Center(child: Text('Empty')):
                   Expanded(
                     child: GridView.builder(
                       itemCount: snapshot.data!.totalResults.bitLength,

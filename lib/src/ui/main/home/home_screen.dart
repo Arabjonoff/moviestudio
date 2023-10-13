@@ -3,11 +3,9 @@ import 'package:moviestudio/src/bloc/popular_bloc.dart';
 import 'package:moviestudio/src/bloc/top_movie_bloc.dart';
 import 'package:moviestudio/src/model/popular_movie.dart';
 import 'package:moviestudio/src/model/top_movie_model.dart';
-import 'package:moviestudio/src/ui/drawer/drawer_screen.dart';
 import 'package:moviestudio/src/ui/main/search_screen.dart';
 import 'package:moviestudio/src/utils/file_import.dart';
 import 'package:moviestudio/src/widget/carousel_widget.dart';
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
