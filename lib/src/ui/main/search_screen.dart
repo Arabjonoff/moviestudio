@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:moviestudio/src/bloc/serach_bloc.dart';
 import 'package:moviestudio/src/model/popular_movie.dart';
 import 'package:moviestudio/src/theme/app_colors.dart';
+import 'package:moviestudio/src/ui/detail_screen.dart';
 import 'package:moviestudio/src/utils/file_import.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -44,28 +45,34 @@ class _SearchScreenState extends State<SearchScreen> {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  snapshot.data!.results.isEmpty?Center(child: Text('Empty')):
-                  Expanded(
+                  if (snapshot.data!.results.isEmpty) Center(child: Text('Empty')) else Expanded(
                     child: GridView.builder(
-                      itemCount: snapshot.data!.totalResults.bitLength,
+                      itemCount: snapshot.data!.results.length,
                         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
                         itemBuilder: (context, index) {
-                          return Container(
-                            margin: EdgeInsets.symmetric(horizontal: 8,vertical: 8),
-                            height: 154.h,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Expanded(
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: Image.network(
-                                        'https://image.tmdb.org/t/p/w500/${snapshot.data!.results[index].backdropPath}',fit: BoxFit.cover,),
+                          return GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context){
+                                return DetailScreen(id: snapshot.data!.results[index].id);
+                              }));
+                            },
+                            child: Container(
+                              margin: EdgeInsets.symmetric(horizontal: 8,vertical: 8),
+                              height: 154.h,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Image.network(
+                                          'https://image.tmdb.org/t/p/w500/${snapshot.data!.results[index].backdropPath}',fit: BoxFit.cover,),
+                                    ),
                                   ),
-                                ),
-                                SizedBox(height: 10,),
-                                Text(snapshot.data!.results[index].title)
-                              ],
+                                  SizedBox(height: 10,),
+                                  Text(snapshot.data!.results[index].title)
+                                ],
+                              ),
                             ),
                           );
                         }),

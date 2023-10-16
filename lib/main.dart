@@ -44,6 +44,6 @@ class MyApp extends StatelessWidget {
             home: child,
           );
         },
-        child: PlayerScreen());
+        child: HomeScreen());
   }
 }

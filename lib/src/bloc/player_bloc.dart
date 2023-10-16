@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:moviestudio/src/model/http_result.dart';
-import 'package:moviestudio/src/model/movie_detail.dart';
-import 'package:moviestudio/src/model/plater_model.dart';
+import 'package:moviestudio/src/model/player_model.dart';
 import 'package:moviestudio/src/provider/repository.dart';
 import 'package:rxdart/rxdart.dart';
 
