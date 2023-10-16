@@ -32,26 +32,26 @@ class ApiProvider {
 
 
   Future<HttpResult> popularMovie() async{
-    String url = "${_baseUrl}movie/popular?language=ruS&page=1";
+    String url = "${_baseUrl}movie/popular?language=en-US&page=1";
     return await _getRequest(url);
   }
 
   Future<HttpResult> topMovie() async{
-    String url = "${_baseUrl}movie/top_rated?language=ru&page=1";
+    String url = "${_baseUrl}movie/top_rated?language=en-US&page=1";
     return await _getRequest(url);
   }
 
   Future<HttpResult> liveSearch(query)async{
-    String url = '${_baseUrl}search/movie?query=$query&include_adult=false&language=ru&page=1';
+    String url = '${_baseUrl}search/movie?query=$query&include_adult=false&language=en-US&page=1';
     return await _getRequest(url);
   }
 
   Future<HttpResult> movieDetail(id)async{
-    String url = '${_baseUrl}movie/$id?language=ru';
+    String url = '${_baseUrl}movie/$id?language=en-US';
     return await _getRequest(url);
   }
   Future<HttpResult> moviePlayer(id)async{
-    String url = '${_baseUrl}movie/$id/videos?language=ru';
+    String url = '${_baseUrl}movie/$id/videos?language=en-US';
     return await _getRequest(url);
   }
 
