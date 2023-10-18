@@ -2,11 +2,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:moviestudio/src/ui/main/home/home_screen.dart';
+import 'package:moviestudio/src/ui/main/main_screen.dart';
 import 'package:moviestudio/src/ui/player_screen.dart';
+import 'package:moviestudio/src/utils/cache.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  await ThemePreferences.init();
   runApp(
     EasyLocalization(
         supportedLocales: [
@@ -44,6 +47,6 @@ class MyApp extends StatelessWidget {
             home: child,
           );
         },
-        child: HomeScreen());
+        child: MainScreen());
   }
 }

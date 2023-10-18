@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:moviestudio/src/model/popular_movie.dart';
 import 'package:moviestudio/src/utils/file_import.dart';
@@ -22,7 +23,7 @@ class CarouselWidget extends StatelessWidget {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: AppColors.grey),
-                    child: Image.network('https://image.tmdb.org/t/p/w500/${i.backdropPath}',fit: BoxFit.cover,)),
+                    child: CachedNetworkImage(imageUrl:'https://image.tmdb.org/t/p/w500/${i.backdropPath}',fit: BoxFit.cover,)),
                 Positioned(
                   left: 16.w,
                   bottom:16.w,
@@ -32,7 +33,7 @@ class CarouselWidget extends StatelessWidget {
                     height: 76.h,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: AppColors.orange
+                        color: Color.fromRGBO(218, 218, 218, 0.3).withOpacity(0.7),
                     ),
                     child: Text(i.title),
                   ),
@@ -45,7 +46,7 @@ class CarouselWidget extends StatelessWidget {
                     height: 46.h,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: AppColors.orange
+            color: Color.fromRGBO(218, 218, 218, 0.3).withOpacity(0.7)
                     ),
 
                   ),

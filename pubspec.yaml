@@ -41,6 +41,9 @@ dependencies:
   http: ^1.1.0
   rxdart: ^0.27.7
   youtube_player_flutter: ^8.1.2
+  shimmer: ^3.0.0
+  cached_network_image: ^3.3.0
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
   flutter_test:

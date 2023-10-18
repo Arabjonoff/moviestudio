@@ -5,6 +5,7 @@ import 'package:moviestudio/src/provider/repository.dart';
 import 'package:moviestudio/src/theme/app_colors.dart';
 import 'package:moviestudio/src/ui/player_screen.dart';
 import 'package:moviestudio/src/utils/file_import.dart';
+import 'package:moviestudio/src/utils/shimmer/detail_shimmer.dart';
 
 class DetailScreen extends StatefulWidget {
   final int id;
@@ -76,7 +77,7 @@ class _DetailScreenState extends State<DetailScreen> {
               ],
             );
           }
-          return Container(color: Colors.green,);
+          return DetailShimmer();
         }
       ),
     );

@@ -5,6 +5,7 @@ import 'package:moviestudio/src/model/popular_movie.dart';
 import 'package:moviestudio/src/model/top_movie_model.dart';
 import 'package:moviestudio/src/ui/main/search_screen.dart';
 import 'package:moviestudio/src/utils/file_import.dart';
+import 'package:moviestudio/src/utils/shimmer/home_shimmer.dart';
 import 'package:moviestudio/src/widget/carousel_widget.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -52,7 +53,7 @@ tobBloc.getTopMovie();
               if(snapshot.hasData){
                 return BannerWidget(data: snapshot.data!,);
               }
-              return Center(child: CircularProgressIndicator());
+              return HomeShimmer();
             }
           ),
           SizedBox(height: 50.h,),
@@ -62,7 +63,7 @@ tobBloc.getTopMovie();
               if(snapshot.hasData){
                 return CarouselWidget(data: snapshot.data!,);
               }
-              return Center(child: CircularProgressIndicator());
+              return Container();
             }
           )
         ],
